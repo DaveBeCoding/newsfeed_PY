@@ -1,1 +1,8 @@
-print("Hello Test scraper")
+
+
+
+def main():
+    print("Hello Test scraper")
+
+
+main()
