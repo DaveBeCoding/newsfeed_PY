@@ -1,8 +1,8 @@
-from scrapes import Scraper
+from utili.scrapes import Scraper
 
 def main():
     print("Hello Test scraper")
-    Scraper("john").say_hi()
+    Scraper().test_funct()
 
 
 main()
