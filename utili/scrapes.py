@@ -13,10 +13,15 @@ class Scraper:
         # user agent
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36'}
         
-        url = 'https://stackoverflow.com/questions/tagged/python'
+        # url = 'https://stackoverflow.com/questions/tagged/python'
+        url = 'https://www.coindesk.com'
 
         r = requests.get(url, headers=headers)
-        print(r.status_code)
+        
+        soup = BeautifulSoup(r.text, 'html.parser')
+        
+        
+        print(soup.title.text)
 
     def scraping(self):
         # pass
