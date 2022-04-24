@@ -20,11 +20,14 @@ class Scraper:
         r = requests.get(url, headers=headers)
 
         soup = BeautifulSoup(r.text, 'html.parser')
-
-        count = 0
-        for a in soup.find_all('a', href=True):
-            count = 1 + count
-            print(f'Found the URL {count}:', a['href'])
+        tables = soup.find_all('h3', {'class' : 'typography__StyledTypography-owin6q-0'})
+        print(tables)       
+        # class="typography__StyledTypography-owin6q-0 eFJWyp redirect-tag"
+        
+        # count = 0
+        # for a in soup.find_all('h3', {'class' : 'typography__StyledTypography-owin6q-0'}):
+        #     count = 1 + count
+        #     print(f'Found the URL {count}:', a['href'])
 
     def scraping(self):
         # pass
