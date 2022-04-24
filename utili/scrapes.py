@@ -4,26 +4,34 @@ import requests
 
 
 class Scraper:
-    # def __init__(self, name):
-    #     self.name = name
+    def __init__(self, lname, cname):
+        self.lname = lname
+        self.cname = cname
 
     def say_hi(self):
         print('Hello, from tester')
 
+    # def test_funct(self, lname, cname):
     def test_funct(self):
         # user agent
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36'}
 
-        url = 'https://www.coindesk.com'
+        url_name = self.lname
+        class_Name = self.cname
+        
+        print(class_Name)
+        print("---------------------------------------\n")
 
-        r = requests.get(url, headers=headers)
+        r = requests.get(url_name, headers=headers)
 
         soup = BeautifulSoup(r.text, 'html.parser')
         tables = soup.find_all(
             'h3', {'class': 'typography__StyledTypography-owin6q-0'})
         print(tables)
-        print("\n")
+        
+        print("---------------------------------------\n")
+
         refinded = soup.find_all('div', {'class': 'display-desktop-none'})
         print(refinded)
 
