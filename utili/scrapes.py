@@ -1,3 +1,4 @@
+from weakref import ref
 from bs4 import BeautifulSoup
 import requests
 
@@ -14,24 +15,19 @@ class Scraper:
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36'}
 
-        # url = 'https://stackoverflow.com/questions/tagged/python'
         url = 'https://www.coindesk.com'
 
         r = requests.get(url, headers=headers)
 
         soup = BeautifulSoup(r.text, 'html.parser')
-        tables = soup.find_all('h3', {'class' : 'typography__StyledTypography-owin6q-0'})
-        print(tables)       
-        # class="typography__StyledTypography-owin6q-0 eFJWyp redirect-tag"
-        
-        # count = 0
-        # for a in soup.find_all('h3', {'class' : 'typography__StyledTypography-owin6q-0'}):
-        #     count = 1 + count
-        #     print(f'Found the URL {count}:', a['href'])
+        tables = soup.find_all(
+            'h3', {'class': 'typography__StyledTypography-owin6q-0'})
+        print(tables)
+        print("\n")
+        refinded = soup.find_all('div', {'class': 'display-desktop-none'})
+        print(refinded)
 
     def scraping(self):
-        # pass
-        # This example uses Python 2.7 and the python-request library.
 
         from requests import Request, Session
         from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
