@@ -39,3 +39,13 @@ with open('test.html', 'r', encoding="utf-8") as page:
     
 # >>> print(type(soup2))
 # class 'bs4.BeautifulSoup'>
+
+# update test-branch to main ::
+# git fetch 
+# git rebase [main]
+
+# history Display last n lines
+# history [n n*] (start-n end-n*) -> first (n's)
+
+# last [n n*]
+# history [-n -n*] -> last (-n's)
