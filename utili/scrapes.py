@@ -1,4 +1,4 @@
-from weakref import ref
+# from weakref import ref
 from bs4 import BeautifulSoup
 import requests
 
