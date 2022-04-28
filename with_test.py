@@ -7,5 +7,6 @@ with open('test.html', 'r', encoding="utf-8") as page:
     questions = soup2.a
 
     # clean-text
-    print(str(questions)[2:-4] + "\n")
-    print(questions.string)
+    print(str(questions)[2:-4] + "\n") # display without element tags, 
+                                            # class & href link only
+    print(questions.string) # only inner text/string
