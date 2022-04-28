@@ -1,4 +1,3 @@
-# from weakref import ref
 from bs4 import BeautifulSoup
 import requests
 
@@ -13,14 +12,14 @@ class Scraper:
 
     # def test_funct(self, lname, cname):
     def test_funct(self):
-        
+
         # user agent
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36'}
 
         url_name = self.lname
         class_Name = self.cname
-        
+
         print(class_Name)
         print("---------------------------------------\n")
 
@@ -30,7 +29,7 @@ class Scraper:
         tables = soup.find_all(
             'h3', {'class': 'typography__StyledTypography-owin6q-0'})
         print(tables)
-        
+
         print("---------------------------------------\n")
 
         refinded = soup.find_all('div', {'class': 'display-desktop-none'})
