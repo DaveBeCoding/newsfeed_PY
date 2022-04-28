@@ -7,7 +7,7 @@ with open('test.html', 'r', encoding="utf-8") as page:
     questions = soup2.find_all('div', {'class': 'display-desktop-none'})
     questions = soup2.a
 
-    # clean text
+    # clean-text
     print(str(questions)[2:-4] + "\n")
     print(questions.string)
 
