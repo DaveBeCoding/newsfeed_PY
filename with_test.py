@@ -6,18 +6,18 @@ with open('test.html', 'r', encoding="utf-8") as page:
     soup2 = BeautifulSoup(str(page.readlines()), "html.parser")
     
     questions = soup2.find_all('div', {'class' : 'display-desktop-none'})
-    
+    # questions = soup2.a
     # print(len(questions))
     # title = questions.find('a', {'class': 'category'})
-    
-    for item in questions:
-        title = item.find("a", {"class": "category", "href": True})['href']
+    for items in questions:
+        item = items.string
+        # title = item.find("a", {"class": "category", "href": True})['href']
         # print(item)
         # title = item.find('p')
         # print(title)
         # title = item.find('p', {'class': 'typography__StyledTypography-owin6q-0'})
         # title = item.find('a', {'class': 'category'})
-        print(title)
+        print(item)
     
     
     # print(type(soup2))
